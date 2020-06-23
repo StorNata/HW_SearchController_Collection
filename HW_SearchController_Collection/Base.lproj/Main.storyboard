@@ -43,7 +43,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tFD-fw-yUo">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="tFD-fw-yUo">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SLf-Li-wbk">
@@ -93,19 +93,8 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <searchBar key="backgroundView" contentMode="redraw" ambiguous="YES" placeholder="dd" id="q7l-Oa-qrI">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="44" id="xAv-dd-r0Z"/>
-                                    </constraints>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="1P3-4e-b2K" id="vOL-7c-p0p"/>
-                                    </connections>
-                                </searchBar>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FjW-k3-dXo">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="FjW-k3-dXo">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z4O-Jb-vMj">
@@ -127,7 +116,6 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="ppy-7k-AOt" id="V0y-0F-0Hy"/>
-                        <outlet property="searchFooterBottomConstraint" destination="q7l-Oa-qrI" id="Fc0-4r-jby"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snh-No-SUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -137,7 +125,7 @@
         <!--Detailed Controller-->
         <scene sceneID="0Sn-IK-1bw">
             <objects>
-                <viewController id="WUG-MV-Dno" customClass="DetailedController" customModule="HW_SearchController_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailedController" id="WUG-MV-Dno" customClass="DetailedController" customModule="HW_SearchController_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VOR-Ed-Ojf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,10 +148,10 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="6Bm-0P-i4b" secondAttribute="trailing" constant="20" id="6XZ-ya-X8h"/>
+                                    <constraint firstItem="6Bm-0P-i4b" firstAttribute="centerX" secondItem="7TW-ta-BQp" secondAttribute="centerX" id="Cy2-pt-lui"/>
                                     <constraint firstItem="m3C-LA-dcM" firstAttribute="top" secondItem="6Bm-0P-i4b" secondAttribute="bottom" constant="20" id="OUf-OC-y25"/>
-                                    <constraint firstItem="6Bm-0P-i4b" firstAttribute="centerX" secondItem="7TW-ta-BQp" secondAttribute="centerX" id="cSl-CY-7xu"/>
+                                    <constraint firstItem="6Bm-0P-i4b" firstAttribute="top" secondItem="7TW-ta-BQp" secondAttribute="top" constant="20" id="bUj-Od-O55"/>
                                     <constraint firstItem="6Bm-0P-i4b" firstAttribute="leading" secondItem="7TW-ta-BQp" secondAttribute="leading" constant="20" id="g2G-uC-yS6"/>
-                                    <constraint firstItem="6Bm-0P-i4b" firstAttribute="top" secondItem="7TW-ta-BQp" secondAttribute="top" constant="20" id="gEA-e4-YMf"/>
                                     <constraint firstItem="m3C-LA-dcM" firstAttribute="leading" secondItem="7TW-ta-BQp" secondAttribute="leading" constant="20" id="gEN-R0-vnK"/>
                                     <constraint firstAttribute="bottom" secondItem="m3C-LA-dcM" secondAttribute="bottom" constant="20" id="pWa-WB-leU"/>
                                     <constraint firstAttribute="trailing" secondItem="m3C-LA-dcM" secondAttribute="trailing" constant="20" id="r6E-JQ-fZV"/>

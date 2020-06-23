@@ -35,6 +35,7 @@ class SearchController: UIViewController {
             object: nil, queue: .main) { (notification) in
                 self.handleKeyboard(notification: notification)
         }
+        
     }
      private func handleKeyboard(notification: Notification) {
           // 1
@@ -65,6 +66,7 @@ class SearchController: UIViewController {
             dataSource.append(contentsOf: items)
             collectionView?.reloadData()
         }
+
     }
 //MARK: - Data Sours
 extension SearchController: UICollectionViewDataSource {
@@ -103,9 +105,9 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
         return CGSize.init(width: cellWidth, height: 0 )
 }
 }
-extension SearchController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+extension SearchController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
         // open detaild controller
         
         onSelectedItem?(dataSource[indexPath.row])

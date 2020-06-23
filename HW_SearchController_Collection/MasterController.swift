@@ -25,7 +25,7 @@ class MasterController: UIViewController {
         
         
         
-  //MARK: - Search
+        //MARK: - Search
         
         let searchResultsController = self.storyboard?.instantiateViewController(withIdentifier: "SearchController") as? SearchController
         searchResultsController?.onSelectedItem = { [weak self] item in
@@ -65,7 +65,7 @@ extension MasterController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
-       }
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataSource.count
     }
@@ -80,13 +80,13 @@ extension MasterController: UICollectionViewDataSource {
 }
 //MARK: - Delegate Flow Layout
 extension MasterController: UICollectionViewDelegateFlowLayout {
-
-func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return spacing
-}
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return spacing
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-           return spacing
-       }
+        return spacing
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
     }
@@ -95,18 +95,17 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
         
         let cellWidth = (collectionView.frame.size.width - 2 * spacing - CGFloat((columCount - 1)) * spacing) / CGFloat(columCount)
         
-      
         return CGSize.init(width: cellWidth, height: collectionView.frame.size.height)
-}
+    }
 }
 //MARK: - Delegat
 extension MasterController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-    // open detaild controller
-
-    didSelectItem(dataSource[indexPath.item])
-}
+        // open detaild controller
+        
+        didSelectItem(dataSource[indexPath.item])
+    }
 }
 //MARK: - Search Results Updating
 extension MasterController: UISearchResultsUpdating {
